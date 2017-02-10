@@ -1,8 +1,8 @@
 language: csharp
-solution: Travis1CSharp.sln
+solution: GameOfLife.sln
 install:
-  - nuget restore Travis1CSharp.sln
+  - nuget restore GameOfLife.sln
   - nuget install NUnit.ConsoleRunner -Version 3.6.0 -OutputDirectory testrunner 
 script:
-  - xbuild /p:Configuration=Release Travis1CSharp.sln
-  - mono ./testrunner/NUnit.ConsoleRunner.3.6.0/tools/nunit3-console.exe ./Travis1CSharp.Test/bin/Release/Travis1CSharp.Test.dll
+  - xbuild /p:Configuration=Release GameOfLife.sln
+  - mono ./testrunner/NUnit.ConsoleRunner.3.6.0/tools/nunit3-console.exe ./GameOfLife.Test/bin/Release/GameOfLife.Test.dll
