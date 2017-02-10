@@ -21,5 +21,3 @@ transition from one state to another is a user option to either
 `Thread.sleep` will pause the game if automation is selected.
 
 Use best practices and clean code
-
-[![Build Status](https://travis-ci.org/MCO368-1/hw3-rygler.svg?branch=master)](https://travis-ci.org/MCO368-1/hw3-rygler)
