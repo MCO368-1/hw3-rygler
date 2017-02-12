@@ -14,8 +14,8 @@ namespace GameOfLife
             _cells = new Cell[height, width];
 
             for (var row = 0; row < height; row++)
-            for (var column = 0; column < width; column++)
-                _cells[row, column] = new Cell();
+                for (var column = 0; column < width; column++)
+                    _cells[row, column] = new Cell();
         }
 
         public Board SetPattern(Pattern pattern)
@@ -148,12 +148,12 @@ namespace GameOfLife
         {
             var random = new Random();
             for (var row = 0; row < _cells.GetLength(0); row++)
-            for (var column = 0; column < _cells.GetLength(1); column++)
-            {
-                var randomValue = random.NextDouble();
-                if (randomValue <= .2)
-                    _cells[row, column].IsAlive = true;
-            }
+                for (var column = 0; column < _cells.GetLength(1); column++)
+                {
+                    var randomValue = random.NextDouble();
+                    if (randomValue <= .2)
+                        _cells[row, column].IsAlive = true;
+                }
         }
 
         public Board NextGeneration()
@@ -161,8 +161,8 @@ namespace GameOfLife
             var nextBoard = new Board();
 
             for (var row = 0; row < _cells.GetLength(0); row++)
-            for (var column = 0; column < _cells.GetLength(0); column++)
-                nextBoard._cells[row, column].IsAlive = GetNextState(row, column);
+                for (var column = 0; column < _cells.GetLength(0); column++)
+                    nextBoard._cells[row, column].IsAlive = GetNextState(row, column);
 
             return nextBoard;
         }
@@ -174,14 +174,14 @@ namespace GameOfLife
             var totalColumns = _cells.GetLength(1);
 
             for (var i = row - 1; i <= row + 1; i++)
-            for (var j = column - 1; j <= column + 1; j++)
-            {
-                var rowIndex = (i + totalRows) % totalRows;
-                var columnIndex = (j + totalColumns) % totalColumns;
+                for (var j = column - 1; j <= column + 1; j++)
+                {
+                    var rowIndex = (i + totalRows) % totalRows;
+                    var columnIndex = (j + totalColumns) % totalColumns;
 
-                if (_cells[rowIndex, columnIndex].IsAlive)
-                    count++;
-            }
+                    if (_cells[rowIndex, columnIndex].IsAlive)
+                        count++;
+                }
 
             if (count == 3)
                 return true;
