@@ -1,11 +1,12 @@
 ﻿namespace GameOfLife
 {
-    enum Pattern
+    public enum Pattern
     {
-        Blinker,
-        Toad,
-        Beacon,
-        Pulsar,
-        Pentadecathlon
+        Blinker = 0,
+        Toad = 1,
+        Beacon = 2,
+        Pulsar = 3,
+        Pentadecathlon = 4,
+        Random = 5
     }
 }

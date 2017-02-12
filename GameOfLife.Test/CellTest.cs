@@ -19,17 +19,5 @@ namespace GameOfLife.Test
             Assert.AreEqual(false, deadCell.IsAlive);
             Assert.AreEqual(false, new Cell().IsAlive);
         }
-
-        [Test]
-        public void SwitchCellState()
-        {
-            var cell = new Cell(false);
-
-            cell.SwitchState();
-            Assert.AreEqual(true, cell.IsAlive);
-
-            cell.SwitchState();
-            Assert.AreEqual(false, cell.IsAlive);
-        }
     }
 }
