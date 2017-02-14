@@ -1,0 +1,10 @@
+language: csharp
+solution: GameOfLife.sln
+install:
+  - nuget restore GameOfLife.sln
+  - nuget install NUnit.ConsoleRunner -Version 3.6.0 -OutputDirectory testrunner 
+script:
+  - xbuild /p:Configuration=Release GameOfLife.sln
+  - mono ./testrunner/NUnit.ConsoleRunner.3.6.0/tools/nunit3-console.exe ./GameOfLife.Test/bin/Release/GameOfLife.Test.exe
+notifications:
+  email: false
